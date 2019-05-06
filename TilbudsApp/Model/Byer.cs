@@ -9,6 +9,14 @@ namespace TilbudsApp.Model
     class Byer
     {
         public int Id { get; set; }
+        public string Bname { get; set; }
+
+        public Byer(int id, string bname)
+        {
+            Id = id;
+            Bname = bname;
+        }
+
         // TODO
     }
 }
