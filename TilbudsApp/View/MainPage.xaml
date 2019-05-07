@@ -9,9 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ListView HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="400" Margin="236,252,0,0"/>
-        <ListView HorizontalAlignment="Left" Height="600" Margin="947,252,0,0" VerticalAlignment="Top" Width="400"/>
-        <TextBlock HorizontalAlignment="Left" Margin="236,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="98" SelectionChanged="TextBlock_SelectionChanged">
+        <ListView x:Name="ListviewOverByer" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="400" Margin="236,252,0,0"/>
+        <ListView x:Name="ListViewOverButikker" HorizontalAlignment="Left" Height="600" Margin="947,252,0,0" VerticalAlignment="Top" Width="400"/>
+        <TextBlock x:Name="Byer" HorizontalAlignment="Left" Margin="236,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="98" SelectionChanged="TextBlock_SelectionChanged" FontSize="72">
             <Run Text="Byer"/>
             <LineBreak/>
             <Run/>
