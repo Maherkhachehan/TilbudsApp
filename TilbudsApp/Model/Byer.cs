@@ -17,6 +17,9 @@ namespace TilbudsApp.Model
             Bname = bname;
         }
 
-        // TODO
+        public override string ToString()
+        {
+            return $"{nameof(Id)}: {Id}, {nameof(Bname)}: {Bname}";
+        }
     }
 }

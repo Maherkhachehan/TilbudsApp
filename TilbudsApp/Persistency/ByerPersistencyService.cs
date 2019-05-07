@@ -14,7 +14,7 @@ namespace TilbudsApp.Persistency
     class ByerPersistencyService
     {
         /// <summary>
-        /// 
+        /// 0
         /// </summary>
         /// <returns></returns>
         public static async Task<List<Byer>> GetByerAsync()
