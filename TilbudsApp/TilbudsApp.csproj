@@ -120,7 +120,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Butik.cs" />
-    <Compile Include="Model\ByerSingleton.cs" />
+    <Compile Include="Model\Singleton\ButikSingleton.cs" />
+    <Compile Include="Model\Singleton\ByerSingleton.cs" />
     <Compile Include="Model\Firma.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\TilbudItem.cs" />
