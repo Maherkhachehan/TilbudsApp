@@ -125,6 +125,8 @@
     <Compile Include="Model\Firma.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\TilbudItem.cs" />
+    <Compile Include="Persistency\ButikPersistencyService.cs" />
+    <Compile Include="Persistency\FirmaPersistencyService.cs" />
     <Compile Include="ViewModel\ByerViewModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

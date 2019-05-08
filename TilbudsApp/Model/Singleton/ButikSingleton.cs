@@ -1,18 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TilbudsApp.Persistency;
 
 namespace TilbudsApp.Model.Singleton
 {
     class ButikSingleton
     {
+        
         private static ButikSingleton _instance = null;
 
-        public static ByerSingleton Instance
+        public static ButikSingleton Instance
         {
-            get { return}
+            get { return _instance ?? (_instance = new ButikSingleton()); }
         }
+
+        public ObservableCollection<Butik> ButikCollection { get; set; }
+
+        private ButikSingleton()
+        {
+            ButikCollection = new ObservableCollection<Butik>();
+        }
+
+        public void Add(int id, int firmaId, int zipCode, string adresse)
+        {
+            Butik ButikToBeAdded = new Butik(id,firmaId,zipCode,adresse);
+            ButikCollection.Add(ButikToBeAdded);
+            ButikPersistencyService.PostByAsync(ButikToBeAdded);
+        }
+
+        public void Delete(Butik ButikToBeDelete)
+        {
+            ButikCollection.Remove((ButikToBeDelete));
+            ButikPersistencyService.DeleteByAsync(ButikToBeDelete);
+        }
+
     }
 }
