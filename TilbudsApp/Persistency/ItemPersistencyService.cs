@@ -10,9 +10,9 @@ using TilbudsApp.Model;
 
 namespace TilbudsApp.Persistency
 {
-    class FirmaPersistencyService
+    class ItemPersistencyService
     {
-        public static async Task<List<Firma>> GetFirmaAsync()
+        public static async Task<List<Item>> GetItemAsync()
         {
             const string ServerUrl = "http://localhost:64090";
             HttpClientHandler handler = new HttpClientHandler();
@@ -26,11 +26,11 @@ namespace TilbudsApp.Persistency
 
                 try
                 {
-                    var response = client.GetAsync("api/Firmas").Result;
+                    var response = client.GetAsync("api/Items").Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        var firmas = await response.Content.ReadAsAsync<IEnumerable<Firma>>();
-                        return (List<Firma>)firmas;
+                        var items = await response.Content.ReadAsAsync<IEnumerable<Item>>();
+                        return (List<Item>)items;
                     }
 
                     return null;
@@ -42,7 +42,7 @@ namespace TilbudsApp.Persistency
             }
         }
 
-        public static async void PostFirmaAsync(Firma firma)
+        public static async void PostItemAsync(Item item)
         {
             const string ServerUrl = "http://localhost:64090";
             HttpClientHandler handler = new HttpClientHandler();
@@ -56,7 +56,7 @@ namespace TilbudsApp.Persistency
 
                 try
                 {
-                    var post = await client.PostAsJsonAsync("Api/Firmas", firma);
+                    var post = await client.PostAsJsonAsync("Api/Items", item);
                 }
                 catch (Exception e)
                 {
@@ -65,7 +65,7 @@ namespace TilbudsApp.Persistency
             }
         }
 
-        public static async void PutFirmaAsync(Firma firma)
+        public static async void PutItemAsync(Item item)
         {
             const string ServerUrl = "http://localhost:64090";
             HttpClientHandler handler = new HttpClientHandler();
@@ -79,7 +79,7 @@ namespace TilbudsApp.Persistency
 
                 try
                 {
-                    var put = await client.PutAsJsonAsync("Api/Firmas/" + firma.Id, firma);
+                    var put = await client.PutAsJsonAsync("Api/Items/" + item.Id, item);
                 }
                 catch (Exception e)
                 {
@@ -88,7 +88,7 @@ namespace TilbudsApp.Persistency
             }
         }
 
-        public static async void DeleteFirmaAsync(Firma firma)
+        public static async void DeleteItemAsync(Item item)
         {
             const string ServerUrl = "http://localhost:64090";
             HttpClientHandler handler = new HttpClientHandler();
@@ -102,7 +102,7 @@ namespace TilbudsApp.Persistency
 
                 try
                 {
-                    var delete = await client.DeleteAsync("Api/Firmas/" + firma.Id);
+                    var delete = await client.DeleteAsync("Api/Items/" + item.Id);
                 }
                 catch (Exception e)
                 {
@@ -110,5 +110,6 @@ namespace TilbudsApp.Persistency
                 }
             }
         }
+
     }
 }

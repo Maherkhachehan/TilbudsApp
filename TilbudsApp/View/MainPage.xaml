@@ -1,21 +1,27 @@
 ﻿<Page
-    x:Class="TilbudsApp.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TilbudsApp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:TilbudsApp.ViewModel"
+    x:Class="TilbudsApp.MainPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.DataContext>
+        <ViewModel:ByerViewModel/>
+    </Page.DataContext>
+
     <Grid>
-        <ListView x:Name="ListviewOverByer" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="400" Margin="236,252,0,0"/>
-        <ListView x:Name="ListViewOverButikker" HorizontalAlignment="Left" Height="600" Margin="947,252,0,0" VerticalAlignment="Top" Width="400"/>
+        <ListView Background="AntiqueWhite" x:Name="ListviewOverByer" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="400" Margin="236,252,0,0" ItemsSource="{Binding ByerSingleton.ByerCollection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <ListView Background="Coral" x:Name="ListViewOverButikker" HorizontalAlignment="Left" Height="600" Margin="947,252,0,0" VerticalAlignment="Top" Width="400"/>
         <TextBlock x:Name="Byer" HorizontalAlignment="Left" Margin="236,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="98" SelectionChanged="TextBlock_SelectionChanged" FontSize="72">
             <Run Text="Byer"/>
             <LineBreak/>
             <Run/>
         </TextBlock>
+        <TextBox HorizontalAlignment="Left" Margin="562,154,0,0" TextWrapping="Wrap" Text="Roskilde" VerticalAlignment="Top" Height="29" Width="90"/>
 
     </Grid>
 

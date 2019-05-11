@@ -27,15 +27,15 @@ namespace TilbudsApp.Model.Singleton
 
         public void Add(int id, int firmaId, int zipCode, string adresse)
         {
-            Butik ButikToBeAdded = new Butik(id,firmaId,zipCode,adresse);
-            ButikCollection.Add(ButikToBeAdded);
-            ButikPersistencyService.PostByAsync(ButikToBeAdded);
+            Butik butikToBeAdded = new Butik(id,firmaId,zipCode,adresse);
+            ButikCollection.Add(butikToBeAdded);
+            ButikPersistencyService.PostButikAsync(butikToBeAdded);
         }
 
         public void Delete(Butik ButikToBeDelete)
         {
             ButikCollection.Remove((ButikToBeDelete));
-            ButikPersistencyService.DeleteByAsync(ButikToBeDelete);
+            ButikPersistencyService.DeleteButikAsync(ButikToBeDelete);
         }
 
     }

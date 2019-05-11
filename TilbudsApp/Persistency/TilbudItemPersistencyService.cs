@@ -10,9 +10,9 @@ using TilbudsApp.Model;
 
 namespace TilbudsApp.Persistency
 {
-    class FirmaPersistencyService
+    class TilbudItemPersistencyService
     {
-        public static async Task<List<Firma>> GetFirmaAsync()
+        public static async Task<List<TilbudItem>> GetTilbudItemAsync()
         {
             const string ServerUrl = "http://localhost:64090";
             HttpClientHandler handler = new HttpClientHandler();
@@ -26,11 +26,11 @@ namespace TilbudsApp.Persistency
 
                 try
                 {
-                    var response = client.GetAsync("api/Firmas").Result;
+                    var response = client.GetAsync("api/TilbudItems").Result;
                     if (response.IsSuccessStatusCode)
                     {
-                        var firmas = await response.Content.ReadAsAsync<IEnumerable<Firma>>();
-                        return (List<Firma>)firmas;
+                        var tilbudItems = await response.Content.ReadAsAsync<IEnumerable<TilbudItem>>();
+                        return (List<TilbudItem>)tilbudItems;
                     }
 
                     return null;
@@ -42,7 +42,7 @@ namespace TilbudsApp.Persistency
             }
         }
 
-        public static async void PostFirmaAsync(Firma firma)
+        public static async void PostTilbudItemAsync(TilbudItem tilbudItem)
         {
             const string ServerUrl = "http://localhost:64090";
             HttpClientHandler handler = new HttpClientHandler();
@@ -56,7 +56,7 @@ namespace TilbudsApp.Persistency
 
                 try
                 {
-                    var post = await client.PostAsJsonAsync("Api/Firmas", firma);
+                    var post = await client.PostAsJsonAsync("Api/TilbudItems", tilbudItem);
                 }
                 catch (Exception e)
                 {
@@ -65,7 +65,7 @@ namespace TilbudsApp.Persistency
             }
         }
 
-        public static async void PutFirmaAsync(Firma firma)
+        public static async void PutTilbudItemAsync(TilbudItem tilbudItem)
         {
             const string ServerUrl = "http://localhost:64090";
             HttpClientHandler handler = new HttpClientHandler();
@@ -79,7 +79,7 @@ namespace TilbudsApp.Persistency
 
                 try
                 {
-                    var put = await client.PutAsJsonAsync("Api/Firmas/" + firma.Id, firma);
+                    var put = await client.PutAsJsonAsync("Api/TilbudsItems/" + tilbudItem.Id, tilbudItem);
                 }
                 catch (Exception e)
                 {
@@ -88,7 +88,7 @@ namespace TilbudsApp.Persistency
             }
         }
 
-        public static async void DeleteFirmaAsync(Firma firma)
+        public static async void DeleteTilbudItemAsync(TilbudItem tilbudItem)
         {
             const string ServerUrl = "http://localhost:64090";
             HttpClientHandler handler = new HttpClientHandler();
@@ -102,7 +102,7 @@ namespace TilbudsApp.Persistency
 
                 try
                 {
-                    var delete = await client.DeleteAsync("Api/Firmas/" + firma.Id);
+                    var delete = await client.DeleteAsync("Api/TilbudsItems/" + tilbudItem.Id);
                 }
                 catch (Exception e)
                 {

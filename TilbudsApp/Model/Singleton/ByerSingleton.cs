@@ -22,6 +22,8 @@ namespace TilbudsApp.Model
         private ByerSingleton()
         {
             ByerCollection = new ObservableCollection<Byer>();
+            //ByerCollection.Add(new Byer(4, "test name"));
+
         }
 
         public void Add(int id, string bName)
@@ -35,6 +37,22 @@ namespace TilbudsApp.Model
         {
             ByerCollection.Remove((ByToBeDelete));
             ByerPersistencyService.DeleteByAsync(ByToBeDelete);
+        }
+
+        public void LoadFromDB()
+        {
+
+            
+            List<Byer> tempList = new List<Byer>();
+
+            // her får jeg en liste af byer. fordi jeg har skrevet ".result"
+            tempList = ByerPersistencyService.GetByerAsync().Result;
+
+            // her går jeg igennem listen med foreach, for at add dem til min OC'list
+            foreach (Byer by in tempList)
+            {
+                ByerCollection.Add(by);
+            }
         }
 
     }
