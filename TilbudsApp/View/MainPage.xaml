@@ -8,14 +8,16 @@
     x:Class="TilbudsApp.MainPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
     <Page.DataContext>
-        <ViewModel:ByerViewModel/>
+        <ViewModel:ButikViewModel/>
     </Page.DataContext>
 
+
     <Grid>
-        <ListView Background="AntiqueWhite" x:Name="ListviewOverByer" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="400" Margin="236,252,0,0" ItemsSource="{Binding ByerSingleton.ByerCollection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-        <ListView Background="Coral" x:Name="ListViewOverButikker" HorizontalAlignment="Left" Height="600" Margin="947,252,0,0" VerticalAlignment="Top" Width="400"/>
+        <ListView Background="AntiqueWhite" x:Name="ListviewOverByer" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="400" Margin="236,252,0,0" ItemsSource="{Binding ButikSingleton.ByerCollection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Selectedby, Mode=TwoWay}"/>
+        <ListView Background="AntiqueWhite" x:Name="ListViewOverButikker" HorizontalAlignment="Left" Height="600" Margin="947,252,0,0" VerticalAlignment="Top" Width="400" ItemsSource="{Binding ButikSingleton.ButikCollection, Mode=TwoWay}" SelectionChanged="ListViewOverButikker_SelectionChanged">
+           
+        </ListView>
         <TextBlock x:Name="Byer" HorizontalAlignment="Left" Margin="236,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="98" SelectionChanged="TextBlock_SelectionChanged" FontSize="72">
             <Run Text="Byer"/>
             <LineBreak/>
@@ -23,6 +25,6 @@
         </TextBlock>
         <TextBox HorizontalAlignment="Left" Margin="562,154,0,0" TextWrapping="Wrap" Text="Roskilde" VerticalAlignment="Top" Height="29" Width="90"/>
 
-    </Grid>
+    </Grid> 
 
 </Page>

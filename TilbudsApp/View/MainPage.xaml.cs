@@ -34,5 +34,10 @@ namespace TilbudsApp
         {
 
         }
+        
+        private void ListViewOverButikker_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

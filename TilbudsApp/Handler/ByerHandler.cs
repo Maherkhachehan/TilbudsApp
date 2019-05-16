@@ -8,19 +8,19 @@ using TilbudsApp.ViewModel;
 
 namespace TilbudsApp.Handler
 {
-    class ByerHandler
-    {
-        //SKAL MÅSKE IKKE BRUGES
-        public ByerViewModel ByerViewModel { get; set; }
+    //class ByerHandler
+    //{
+    //    //SKAL MÅSKE IKKE BRUGES
+    //    public ByerViewModel ByerViewModel { get; set; }
 
-        public ByerHandler(ByerViewModel byerViewModel)
-        {
-            ByerViewModel = byerViewModel;
-        }
+    //    public ByerHandler(ByerViewModel byerViewModel)
+    //    {
+    //        ByerViewModel = byerViewModel;
+    //    }
 
-        public void SetSelectedBy(Byer by)
-        {
+    //    public void SetSelectedBy(Byer by)
+    //    {
             
-        }
-    }
+    //    }
+    //}
 }

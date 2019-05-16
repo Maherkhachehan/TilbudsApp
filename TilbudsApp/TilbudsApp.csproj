@@ -134,6 +134,7 @@
     <Compile Include="Persistency\FirmaPersistencyService.cs" />
     <Compile Include="Persistency\ItemPersistencyService.cs" />
     <Compile Include="Persistency\TilbudItemPersistencyService.cs" />
+    <Compile Include="ViewModel\ButikViewModel.cs" />
     <Compile Include="ViewModel\ByerViewModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

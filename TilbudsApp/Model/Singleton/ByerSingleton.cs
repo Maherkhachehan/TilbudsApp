@@ -26,13 +26,21 @@ namespace TilbudsApp.Model
 
         }
 
+        /// <summary>
+        /// Metoden tilføjer Et by objekt til oc og til db
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="bName"></param>
         public void Add(int id, string bName)
         {
             Byer byToBeAdded = new Byer(id, bName);
             ByerCollection.Add(byToBeAdded);
             ByerPersistencyService.PostByAsync(byToBeAdded);
         }
-
+        /// <summary>
+        /// Metoden sletter et by objekt fra OC og DB
+        /// </summary>
+        /// <param name="ByToBeDelete"></param>
         public void Delete(Byer ByToBeDelete)
         {
             ByerCollection.Remove((ByToBeDelete));

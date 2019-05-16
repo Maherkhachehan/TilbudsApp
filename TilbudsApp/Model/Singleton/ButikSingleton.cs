@@ -19,10 +19,12 @@ namespace TilbudsApp.Model.Singleton
         }
 
         public ObservableCollection<Butik> ButikCollection { get; set; }
+        public ObservableCollection<Byer> ByerCollection { get; set; }
 
         private ButikSingleton()
         {
             ButikCollection = new ObservableCollection<Butik>();
+            ByerCollection = new ObservableCollection<Byer>();
         }
 
         public void Add(int id, int firmaId, int zipCode, string adresse)
@@ -38,5 +40,30 @@ namespace TilbudsApp.Model.Singleton
             ButikPersistencyService.DeleteButikAsync(ButikToBeDelete);
         }
 
+        public async void LoadDb()
+        {
+            List<Butik> tempList = new List<Butik>();
+
+            tempList = await ButikPersistencyService.GetButikAsync();
+            foreach (Butik butik in tempList)
+            {
+             ButikCollection.Add(butik);   
+            }
+        }
+        public async void LoadFromDB()
+        {
+
+
+            List<Byer> tempList = new List<Byer>();
+
+            // her får jeg en liste af byer. fordi jeg har skrevet ".result"
+            tempList = await ByerPersistencyService.GetByerAsync();
+
+            // her går jeg igennem listen med foreach, for at add dem til min OC'list
+            foreach (Byer by in tempList)
+            {
+                ByerCollection.Add(by);
+            }
+        }
     }
 }
