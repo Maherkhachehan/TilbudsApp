@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+    using TilbudsApp.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,19 +26,20 @@ namespace TilbudsApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        
         public MainPage()
         {
             this.InitializeComponent();
         }
 
-        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        {
+        //private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
         
-        private void ListViewOverButikker_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //private void ListViewOverButikker_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
 
-        }
+        //}
     }
 }

@@ -8,7 +8,7 @@ using TilbudsApp.Persistency;
 
 namespace TilbudsApp.Model.Singleton
 {
-    class ButikSingleton
+    public class ButikSingleton
     {
         
         private static ButikSingleton _instance = null;

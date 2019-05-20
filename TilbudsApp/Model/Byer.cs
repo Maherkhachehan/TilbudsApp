@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TilbudsApp.Model
 {
-    class Byer
+    public class Byer
     {
         public int Id { get; set; }
         public string Bname { get; set; }

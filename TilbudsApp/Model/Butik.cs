@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TilbudsApp.Model
 {
-    class Butik
+    public class Butik
     {
         public int Id { get; set; }
         public int FirmaId { get; set; }
