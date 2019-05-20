@@ -15,46 +15,7 @@ namespace TilbudsApp.ViewModel
 {
     public class ButikViewModel : INotifyPropertyChanged
     {
-        //public int Id { get; set; }
-        //public int FirmaId { get; set; }
-        //public int Zipcode { get; set; }
-        //public string Adresse { get; set; }
-
-        private Byer _selectedItem;
-
-        public Byer SelectedItem
-        {
-            get => _selectedItem;
-            set
-            {
-                _selectedItem = value;
-                foreach (var butik in ButikSingleton.ButikCollection)
-                {
-                    if (butik.Zipcode != _selectedItem.Id)
-                    {
-                        ButikSingleton.ButikCollection.Remove(butik);
-                    }
-                }
-            }
-        }
-
-        //public Byer Selectedby
-        //{
-        //    get { return _selectedby; }
-        //    set
-        //    {
-        //        _selectedby = value;
-        //        //ButikSingleton.LoadDb();
-        //        //foreach (var butik in ButikSingleton.ButikCollection)
-        //        //{
-        //        //    if (butik.Zipcode != _selectedby.Id)
-        //        //    {
-        //        //        ButikSingleton.ButikCollection.Remove(butik);
-        //        //    }
-        //        //}
-
-        //    }
-        //}
+        // We don't need other codes here, we'll call all from ButikSingleton class
 
         public ButikSingleton ButikSingleton { get; set; }
 

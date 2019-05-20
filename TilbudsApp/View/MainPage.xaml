@@ -9,23 +9,26 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
         <ListView Background="AntiqueWhite" 
                   HorizontalAlignment="Left" 
                   Height="600" VerticalAlignment="Top" 
                   Width="400" Margin="236,252,0,0" 
                   ItemsSource="{x:Bind ViewModel.ButikSingleton.ByerCollection, Mode=OneWay}" 
-                  SelectedItem="{x:Bind ViewModel.SelectedItem, Mode=TwoWay}"/>
+                  SelectedItem="{x:Bind ViewModel.ButikSingleton.SelectedItem, Mode=TwoWay}" SelectionChanged="ListView_SelectionChanged"/>
 
+        <Button Content="Show All" Click="{x:Bind ViewModel.ButikSingleton.LoadDb}" Grid.Column="1"
+                HorizontalAlignment="Right"></Button>
         <ListView Background="AntiqueWhite" 
                   HorizontalAlignment="Left" 
                   Height="600" Margin="947,252,0,0" 
                   VerticalAlignment="Top" Width="400"
-                  ItemsSource="{x:Bind ViewModel.ButikSingleton.ButikCollection, Mode=OneWay}" />
-        <!--<TextBlock x:Name="Byer" HorizontalAlignment="Left" Margin="236,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="98" SelectionChanged="TextBlock_SelectionChanged" FontSize="72" Text="Byer">
-            
-        </TextBlock>-->
-
+                  ItemsSource="{x:Bind ViewModel.ButikSingleton.ButikCollection, Mode=OneWay}" Grid.ColumnSpan="2" SelectionChanged="ListView_SelectionChanged_1" />
+        
     </Grid>
 
 </Page>

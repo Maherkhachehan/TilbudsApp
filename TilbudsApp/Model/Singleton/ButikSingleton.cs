@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TilbudsApp.Persistency;
 
 namespace TilbudsApp.Model.Singleton
 {
-    public class ButikSingleton
+    public class ButikSingleton : INotifyPropertyChanged
     {
-        
         private static ButikSingleton _instance = null;
 
         public static ButikSingleton Instance
@@ -18,7 +19,50 @@ namespace TilbudsApp.Model.Singleton
             get { return _instance ?? (_instance = new ButikSingleton()); }
         }
 
-        public ObservableCollection<Butik> ButikCollection { get; set; }
+        private Byer _selectedItem;
+
+        public Byer SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                _selectedItem = value;
+                if (value != null)
+                {
+                    // Call this method whenever selected item is changed in Byer list
+                    FilterDb(_selectedItem.Id);
+                }
+
+            }
+        }
+
+        private ObservableCollection<Butik> _butikCollection;
+
+        public ObservableCollection<Butik> ButikCollection
+        {
+            get => _butikCollection;
+            set
+            {
+                _butikCollection = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        #region PropertyChange
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+
+            PropertyChangedEventHandler handler = PropertyChanged;
+
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
+
         public ObservableCollection<Byer> ByerCollection { get; set; }
 
         private ButikSingleton()
@@ -29,7 +73,7 @@ namespace TilbudsApp.Model.Singleton
 
         public void Add(int id, int firmaId, int zipCode, string adresse)
         {
-            Butik butikToBeAdded = new Butik(id,firmaId,zipCode,adresse);
+            Butik butikToBeAdded = new Butik(id, firmaId, zipCode, adresse);
             ButikCollection.Add(butikToBeAdded);
             ButikPersistencyService.PostButikAsync(butikToBeAdded);
         }
@@ -42,18 +86,38 @@ namespace TilbudsApp.Model.Singleton
 
         public async void LoadDb()
         {
+            // I am trying to remove the highlight from the Byer list view when Show all is pressed
+            // But it seems NOT working
+            // TODO: Remove highlight from Byer ListView
+            SelectedItem = null;
+
+            // Clear any items to prevent duplicate since foreach ADDS the SAME database
+            ButikCollection.Clear();
+
             List<Butik> tempList = new List<Butik>();
 
             tempList = await ButikPersistencyService.GetButikAsync();
             foreach (Butik butik in tempList)
             {
-                ButikCollection.Add(butik);   
+                ButikCollection.Add(butik);
             }
         }
+
+        /// <summary>
+        /// Filter original (complete) data with parameter to be filtered
+        /// </summary>
+        /// <param name="id"></param>
+        public async void FilterDb(int? id)
+        {
+            // Load original database
+            LoadDb();
+
+            // Filter by 
+            ButikCollection = new ObservableCollection<Butik>(ButikCollection.Where(x => x.Zipcode == id));
+        }
+
         public async void LoadFromDB()
         {
-
-
             List<Byer> tempList = new List<Byer>();
 
             // her får jeg en liste af byer. fordi jeg har skrevet ".result"
@@ -64,6 +128,7 @@ namespace TilbudsApp.Model.Singleton
             {
                 ByerCollection.Add(by);
             }
+
         }
     }
 }

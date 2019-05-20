@@ -10,7 +10,7 @@ namespace TilbudsApp.Model
     {
         public int Id { get; set; }
         public int FirmaId { get; set; }
-        public int Zipcode { get; set; }
+        public int Zipcode { get; set; } 
         public string Adresse { get; set; }
 
         public Butik(int id, int firmaId, int zipcode, string adresse)
