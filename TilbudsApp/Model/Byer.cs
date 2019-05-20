@@ -19,7 +19,11 @@ namespace TilbudsApp.Model
 
         public override string ToString()
         {
+            // Dette bruges til kun at, printe id og byes navn uden det der står foran.
+            // (isted for Id 3000 så bliver der printet ud 3000)
+            // Oprydning for se godt ud til kunderne.
             return $"{Id}, {Bname}";
-        }
+            //return $"{nameof(Id)}: {Id}, {nameof(Bname)}: {Bname}";
+    }
     }
 }
