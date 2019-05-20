@@ -26,7 +26,8 @@ namespace TilbudsApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        
+        ButikViewModel ViewModel { get; } = new ButikViewModel();
+
         public MainPage()
         {
             this.InitializeComponent();
