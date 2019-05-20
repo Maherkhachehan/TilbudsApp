@@ -94,7 +94,7 @@ namespace TilbudsApp.Model.Singleton
             // Clear any items to prevent duplicate since foreach ADDS the SAME database
             ButikCollection.Clear();
 
-            List<Butik> tempList = new List<Butik>();
+            List<Butik> tempList = new List<Butik>(); // this load butik?
 
             tempList = await ButikPersistencyService.GetButikAsync();
             foreach (Butik butik in tempList)
@@ -116,7 +116,7 @@ namespace TilbudsApp.Model.Singleton
             ButikCollection = new ObservableCollection<Butik>(ButikCollection.Where(x => x.Zipcode == id));
         }
 
-        public async void LoadFromDB()
+        public async void LoadFromDB() // this load byer??? 
         {
             List<Byer> tempList = new List<Byer>();
 

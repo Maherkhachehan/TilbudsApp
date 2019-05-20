@@ -13,13 +13,13 @@ using TilbudsApp.Model.Singleton;
 
 namespace TilbudsApp.ViewModel
 {
-    public class ButikViewModel : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
         // We don't need other codes here, we'll call all from ButikSingleton class
 
         public ButikSingleton ButikSingleton { get; set; }
 
-        public ButikViewModel()
+        public MainViewModel()
         {
             ButikSingleton = ButikSingleton.Instance;
             ButikSingleton.LoadDb();

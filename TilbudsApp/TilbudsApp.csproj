@@ -135,9 +135,7 @@
     <Compile Include="Persistency\ItemPersistencyService.cs" />
     <Compile Include="Persistency\TilbudItemPersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="ViewModel\ButikViewModel.cs" />
-    <Compile Include="ViewModel\ByerViewModel.cs" />
-    <Compile Include="ViewModel\TilbudVM.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

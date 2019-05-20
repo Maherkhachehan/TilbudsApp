@@ -29,7 +29,7 @@ namespace TilbudsApp
         /// <summary>
         ///  Databinded My mainpage to Butikviewmodel
         /// </summary>
-        private ButikViewModel ViewModel { get; } = new ButikViewModel();
+        private MainViewModel ViewModel { get; } = new MainViewModel();
         
         public MainPage()
         {
