@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TilbudsApp.Persistency;
 
 namespace TilbudsApp.Model.Singleton
 {
-    public class ButikSingleton
+    public class ButikSingleton : INotifyPropertyChanged
     {
         private static ButikSingleton _instance = null;
 
@@ -17,7 +19,50 @@ namespace TilbudsApp.Model.Singleton
             get { return _instance ?? (_instance = new ButikSingleton()); }
         }
 
-        public ObservableCollection<Butik> ButikCollection { get; set; }
+        private Byer _selectedItem;
+
+        public Byer SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                _selectedItem = value;
+                if (value != null)
+                {
+                    // Call this method whenever selected item is changed in Byer list
+                    FilterDb(_selectedItem.Id);
+                }
+
+            }
+        }
+
+        private ObservableCollection<Butik> _butikCollection;
+
+        public ObservableCollection<Butik> ButikCollection
+        {
+            get => _butikCollection;
+            set
+            {
+                _butikCollection = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        #region PropertyChange
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+
+            PropertyChangedEventHandler handler = PropertyChanged;
+
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
+
         public ObservableCollection<Byer> ByerCollection { get; set; }
 
         private ButikSingleton()
@@ -41,42 +86,36 @@ namespace TilbudsApp.Model.Singleton
 
         public async void LoadDb()
         {
-            ButikCollection = new ObservableCollection<Butik>
-            {
-                new Butik(1, 001, 111002, "Sample City Address 1"),
-                new Butik(2, 102, 232, "Sample City Address 2"),
-                new Butik(3, 203, 11111002, "Sample City Address 3"),
-                new Butik(4, 304, 1311002, "Sample City Address 4"),
-            };
-            //List<Butik> tempList = new List<Butik>();
+            List<Butik> tempList = new List<Butik>();
 
-            //tempList = await ButikPersistencyService.GetButikAsync();
-            //foreach (Butik butik in tempList)
-            //{
-            //    ButikCollection.Add(butik);
-            //}
+            tempList = await ButikPersistencyService.GetButikAsync();
+            foreach (Butik butik in tempList)
+            {
+             ButikCollection.Add(butik);   
+            }
         }
-        public async void LoadFromDB()
+
+        /// <summary>
+        /// Filter original (complete) data with parameter to be filtered
+        /// </summary>
+        /// <param name="id"></param>
+        public async void FilterDb(int? id)
         {
-            ByerCollection = new ObservableCollection<Byer>
-            {
-                new Byer(1, "Test 1"),
-                new Byer(2, "Test 2"),
-                new Byer(3, "Test 3"),
-                new Byer(4, "Test 4")
-            };
 
+            // Filter by 
+            ButikCollection = new ObservableCollection<Butik>(ButikCollection.Where(x => x.Zipcode == id));
+        }
 
-            //ObservableCollection<Byer> tempList = new ObservableCollection<Byer>();
+            List<Byer> tempList = new List<Byer>();
 
             //// her får jeg en liste af byer. fordi jeg har skrevet ".result"
             //tempList = await ByerPersistencyService.GetByerAsync();
 
-            //// her går jeg igennem listen med foreach, for at add dem til min OC'list
-            //foreach (Byer by in tempList)
-            //{
-            //    ByerCollection.Add(by);
-            //}
+            // her går jeg igennem listen med foreach, for at add dem til min OC'list
+            foreach (Byer by in tempList)
+            {
+                ByerCollection.Add(by);
+            }
         }
     }
 }

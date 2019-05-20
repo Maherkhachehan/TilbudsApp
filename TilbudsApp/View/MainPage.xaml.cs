@@ -26,18 +26,31 @@ namespace TilbudsApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        ButikViewModel ViewModel { get; } = new ButikViewModel();
-
+        /// <summary>
+        ///  Databinded My mainpage to Butikviewmodel
+        /// </summary>
+        private MainViewModel ViewModel { get; } = new MainViewModel();
+        
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListView_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
         }
 
         //private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
         //{
 
         //}
-        
+
         //private void ListViewOverButikker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         //{
 

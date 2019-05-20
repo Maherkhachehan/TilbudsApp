@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -11,18 +13,13 @@ using TilbudsApp.Model.Singleton;
 
 namespace TilbudsApp.ViewModel
 {
-
-    public class TilbudVM : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        //public int FirmaId { get; set; }
-        //public int Zipcode { get; set; }
-        //public string Adresse { get; set; }
-        public Byer _selectedby;
+        // We don't need other codes here, we'll call all from ButikSingleton class
 
         public ButikSingleton ButikSingleton { get; set; }
 
-        public TilbudVM()
+        public MainViewModel()
         {
             ButikSingleton = ButikSingleton.Instance;
             ButikSingleton.LoadDb();

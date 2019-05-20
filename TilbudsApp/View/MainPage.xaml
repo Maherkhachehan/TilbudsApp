@@ -1,38 +1,34 @@
 ﻿<Page
-    x:Class="TilbudsApp.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:ViewModel="using:TilbudsApp.ViewModel"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:TilbudsApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    mc:Ignorable="d">
+    x:Class="TilbudsApp.MainPage"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <ListView
-            Width="556"
-            Height="600"
-            Margin="80,252,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="Navy"
-            Foreground="Black"
-            ItemsSource="{x:Bind ViewModel.ButikSingleton.ButikCollection, Mode=OneWay}" />
+        <ListView Background="AntiqueWhite" 
+                  HorizontalAlignment="Left" 
+                  Height="600" VerticalAlignment="Top" 
+                  Width="400" Margin="236,252,0,0" 
+                  ItemsSource="{x:Bind ViewModel.ButikSingleton.ByerCollection, Mode=OneWay}" 
+                  SelectedItem="{x:Bind ViewModel.ButikSingleton.SelectedItem, Mode=TwoWay}" SelectionChanged="ListView_SelectionChanged"/>
 
-        <ListView
-            Width="602"
-            Height="600"
-            Margin="828,252,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Background="Navy"
-            ItemsSource="{x:Bind ViewModel.ButikSingleton.ByerCollection, Mode=OneWay}" />
-        <!--<TextBlock x:Name="Byer" HorizontalAlignment="Left" Margin="236,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="98" SelectionChanged="TextBlock_SelectionChanged" FontSize="72" Text="Byer">
-
-        </TextBlock>-->
-
+        <Button Content="Show All" Click="{x:Bind ViewModel.ButikSingleton.LoadDb}" Grid.Column="1"
+                HorizontalAlignment="Right"></Button>
+        <ListView Background="AntiqueWhite" 
+                  HorizontalAlignment="Left" 
+                  Height="600" Margin="947,252,0,0" 
+                  VerticalAlignment="Top" Width="400"
+                  ItemsSource="{x:Bind ViewModel.ButikSingleton.ButikCollection, Mode=OneWay}" Grid.ColumnSpan="2" SelectionChanged="ListView_SelectionChanged_1" />
+        
     </Grid>
 
 </Page>
