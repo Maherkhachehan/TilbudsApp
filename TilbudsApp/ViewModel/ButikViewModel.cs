@@ -13,32 +13,8 @@ using TilbudsApp.Model.Singleton;
 
 namespace TilbudsApp.ViewModel
 {
-    class ButikViewModel : INotifyPropertyChanged
+    public class ButikViewModel : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public int FirmaId { get; set; }
-        public int Zipcode { get; set; }
-        public string Adresse { get; set; }
-        public Byer _selectedby;
-
-        //public Byer Selectedby
-        //{
-        //    get { return _selectedby; }
-        //    set
-        //    {
-        //        _selectedby = value;
-        //        //ButikSingleton.LoadDb();
-        //        //foreach (var butik in ButikSingleton.ButikCollection)
-        //        //{
-        //        //    if (butik.Zipcode != _selectedby.Id)
-        //        //    {
-        //        //        ButikSingleton.ButikCollection.Remove(butik);
-        //        //    }
-        //        //}
-
-        //    }
-        //}
-
         public ButikSingleton ButikSingleton { get; set; }
 
         public ButikViewModel()
