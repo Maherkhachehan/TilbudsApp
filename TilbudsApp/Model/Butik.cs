@@ -25,6 +25,7 @@ namespace TilbudsApp.Model
         public override string ToString()
         {
             return $"{nameof(Id)}: {Id}, {nameof(FirmaId)}: {FirmaId}, {nameof(Zipcode)}: {Zipcode}, {nameof(Adresse)}: {Adresse}";
+            //return $"{nameof(Id)}: {Id}, {nameof(FirmaId)}: {FirmaId}, {nameof(Zipcode)}: {Zipcode}, {nameof(Adresse)}: {Adresse}";
         }
     }
 }

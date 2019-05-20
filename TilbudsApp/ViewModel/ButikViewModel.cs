@@ -13,13 +13,30 @@ using TilbudsApp.Model.Singleton;
 
 namespace TilbudsApp.ViewModel
 {
-    class ButikViewModel : INotifyPropertyChanged
+    public class ButikViewModel : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public int FirmaId { get; set; }
-        public int Zipcode { get; set; }
-        public string Adresse { get; set; }
-        public Byer _selectedby;
+        //public int Id { get; set; }
+        //public int FirmaId { get; set; }
+        //public int Zipcode { get; set; }
+        //public string Adresse { get; set; }
+
+        private Byer _selectedItem;
+
+        public Byer SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                _selectedItem = value;
+                foreach (var butik in ButikSingleton.ButikCollection)
+                {
+                    if (butik.Zipcode != _selectedItem.Id)
+                    {
+                        ButikSingleton.ButikCollection.Remove(butik);
+                    }
+                }
+            }
+        }
 
         //public Byer Selectedby
         //{

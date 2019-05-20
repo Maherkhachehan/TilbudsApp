@@ -26,6 +26,10 @@ namespace TilbudsApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        /// <summary>
+        ///  Databinded My mainpage to Butikviewmodel
+        /// </summary>
+        private ButikViewModel ViewModel { get; } = new ButikViewModel();
         
         public MainPage()
         {

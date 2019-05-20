@@ -47,7 +47,7 @@ namespace TilbudsApp.Model.Singleton
             tempList = await ButikPersistencyService.GetButikAsync();
             foreach (Butik butik in tempList)
             {
-             ButikCollection.Add(butik);   
+                ButikCollection.Add(butik);   
             }
         }
         public async void LoadFromDB()
