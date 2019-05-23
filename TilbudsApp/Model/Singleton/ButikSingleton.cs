@@ -86,13 +86,14 @@ namespace TilbudsApp.Model.Singleton
 
         public async void LoadDb()
         {
-            // I am trying to remove the highlight from the Byer list view when Show all is pressed
-            // But it seems NOT working
-            // TODO: Remove highlight from Byer ListView
+            
+            // TODO: Fjern highlight fra Byer ListView
             SelectedItem = null;
 
             // Clear any items to prevent duplicate since foreach ADDS the SAME database
             ButikCollection.Clear();
+
+
 
             List<Butik> tempList = new List<Butik>(); // this load butik?
 
@@ -107,6 +108,8 @@ namespace TilbudsApp.Model.Singleton
         /// Filter original (complete) data with parameter to be filtered
         /// </summary>
         /// <param name="id"></param>
+
+            // Int? betyder den kan være Null
         public async void FilterDb(int? id)
         {
             // Load original database
@@ -115,6 +118,8 @@ namespace TilbudsApp.Model.Singleton
             // Filter by 
             ButikCollection = new ObservableCollection<Butik>(ButikCollection.Where(x => x.Zipcode == id));
         }
+
+        
 
         public async void LoadFromDB() // this load byer??? 
         {
@@ -128,6 +133,7 @@ namespace TilbudsApp.Model.Singleton
             {
                 ByerCollection.Add(by);
             }
+         
 
         }
     }
