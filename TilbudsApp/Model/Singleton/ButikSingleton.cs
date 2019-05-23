@@ -30,7 +30,7 @@ namespace TilbudsApp.Model.Singleton
                 _selectedItem = value;
                 if (value != null)
                 {
-                    // Call this method whenever selected item is changed in Byer list
+                    // Kalder den her metode hvergang selected item er skiftet i byer listen.
                     FilterDb(_selectedItem.Id);
                 }
 
@@ -108,18 +108,14 @@ namespace TilbudsApp.Model.Singleton
             }
         }
 
-        /// <summary>
-        /// Filter original (complete) data with parameter to be filtered
-        /// </summary>
-        /// <param name="id"></param>
-
+        
             // Int? betyder den kan være Null
         public async void FilterDb(int? id)
         {
             // Load original database
             LoadDb();
 
-            // Filter by 
+            // Filterering af butikkerne. 
             ButikCollection = new ObservableCollection<Butik>(ButikCollection.Where(x => x.Zipcode == id));
         }
 
