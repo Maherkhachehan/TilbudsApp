@@ -19,6 +19,7 @@ namespace TilbudsApp.Model.Singleton
             get { return _instance ?? (_instance = new ButikSingleton()); }
         }
 
+
         private Byer _selectedItem;
 
         public Byer SelectedItem
@@ -69,6 +70,9 @@ namespace TilbudsApp.Model.Singleton
         {
             ButikCollection = new ObservableCollection<Butik>();
             ByerCollection = new ObservableCollection<Byer>();
+
+            LoadDb();
+            LoadFromDB();
         }
 
         public void Add(int id, int firmaId, int zipCode, string adresse)

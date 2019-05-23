@@ -14,6 +14,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="585,405,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Height="65" Width="260" FontSize="48"/>
         <TextBox HorizontalAlignment="Left" Height="56" Margin="575,477,0,0" TextWrapping="Wrap" PlaceholderText="Indtast Password " VerticalAlignment="Top" Width="245" FontSize="24"/>
         <Button Content="Main Page" HorizontalAlignment="Left" Margin="1325,30,0,0" VerticalAlignment="Top" Height="60" Width="120" Click="ButtonBase_OnClick"/>
+        <Button Content="Login" HorizontalAlignment="Left" Height="70" Margin="925,360,0,0" VerticalAlignment="Top" Width="175" FontSize="24"/>
     </Grid>
 
 

@@ -57,15 +57,7 @@ namespace TilbudsApp
 
         }
 
-        //private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        //{
-
-        //}
-
-        //private void ListViewOverButikker_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-
-        //}
+      
         private void ButtonBase1_OnClick(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(HelpPage));

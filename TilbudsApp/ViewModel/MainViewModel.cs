@@ -22,8 +22,6 @@ namespace TilbudsApp.ViewModel
         public MainViewModel()
         {
             ButikSingleton = ButikSingleton.Instance;
-            ButikSingleton.LoadDb();
-            ButikSingleton.LoadFromDB();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
