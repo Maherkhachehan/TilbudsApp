@@ -15,8 +15,7 @@ namespace TilbudsApp.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        // Propperties slettet bliver kaldt fra butiksingleton class
-
+        
         public ButikSingleton ButikSingleton { get; set; }
 
         public MainViewModel()

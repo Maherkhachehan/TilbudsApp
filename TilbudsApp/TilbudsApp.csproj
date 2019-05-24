@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Handler\ByerHandler.cs" />
+    <Compile Include="Handler\ItemHandler.cs" />
     <Compile Include="Model\Butik.cs" />
     <Compile Include="Model\Singleton\ButikSingleton.cs" />
     <Compile Include="Model\Singleton\ByerSingleton.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Persistency\TilbudItemPersistencyService.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\OpretItem.cs" />
     <Compile Include="View\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
@@ -151,6 +153,12 @@
     <Compile Include="Model\Byer.cs" />
     <Compile Include="Persistency\ByerPersistencyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\MinButik.xaml.cs">
+      <DependentUpon>MinButik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Varevisning.xaml.cs">
+      <DependentUpon>Varevisning.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -189,6 +197,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\MinButik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Varevisning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client">
@@ -196,6 +212,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.7</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.1</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.2</Version>

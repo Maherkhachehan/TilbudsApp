@@ -12,7 +12,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using TilbudsApp.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -21,39 +20,16 @@ namespace TilbudsApp.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class LoginPage : Page
+    public sealed partial class Varevisning : Page
     {
-        public LoginPage()
+        public Varevisning()
         {
             this.InitializeComponent();
         }
 
-        
-
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void TextBlock_SelectionChanged_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
-
-
-        private void ButtonBase_OnClick2(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MinButik));
         }
     }
 }

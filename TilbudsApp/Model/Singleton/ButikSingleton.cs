@@ -93,8 +93,7 @@ namespace TilbudsApp.Model.Singleton
             
             // TODO: Fjern highlight fra Byer ListView
             SelectedItem = null;
-
-            // Clear any items to prevent duplicate since foreach ADDS the SAME database
+            // Clear alle items for duplicate pga Foreach Addere det samme fra database.
             ButikCollection.Clear();
 
 
@@ -125,7 +124,7 @@ namespace TilbudsApp.Model.Singleton
         {
             List<Byer> tempList = new List<Byer>();
 
-            // her får jeg en liste af byer. fordi jeg har skrevet ".result"
+            // her får jeg en liste af byer
             tempList = await ByerPersistencyService.GetByerAsync();
 
             // her går jeg igennem listen med foreach, for at add dem til min OC'list

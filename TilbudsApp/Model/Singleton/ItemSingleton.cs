@@ -36,5 +36,20 @@ namespace TilbudsApp.Model.Singleton
             ItemCollection.Remove((ItemToBeDelete));
             ItemPersistencyService.DeleteItemAsync(ItemToBeDelete);
         }
+
+        public async void LoadItem()
+        {
+            List<Item> ItemList = new List<Item>();
+
+            //her får jeg en liste af items
+            ItemList = await ItemPersistencyService.GetItemAsync();
+            
+            //
+            foreach (Item items in ItemList )
+            {
+                ItemCollection.Add(items);
+            }
+
+        }
     }
 }
