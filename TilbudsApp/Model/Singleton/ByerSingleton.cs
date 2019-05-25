@@ -17,6 +17,7 @@ namespace TilbudsApp.Model
             get { return _instance ?? (_instance = new ByerSingleton()); }
         }
 
+
         public ObservableCollection<Byer> ByerCollection { get; set; }
 
         private ByerSingleton()

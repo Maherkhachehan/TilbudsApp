@@ -13,16 +13,48 @@ using TilbudsApp.Model.Singleton;
 
 namespace TilbudsApp.ViewModel
 {
-    class OpretItem : INotifyPropertyChanged
+   class OpretItem : INotifyPropertyChanged
     {
         public ICommand _createItemCommand;
 
+
+        private int _id;
+        private string _beskrivelse;
+        private string _iname;
+        #region props
+
         //Skriv propertiesne fra klassen -- Tilbuditem & Item
         public int ItemId { get; set; }
-        public string Iname { get; set; }
-        public string Beskrivelse { get; set; }
 
-        public int Id { get; set; }
+        public string Iname
+        {
+            get { return _iname;}
+            set
+            {
+                _iname = value;
+                OnPropertyChanged(nameof(Iname));
+            }
+        }
+
+        public string Beskrivelse
+        {
+            get { return _beskrivelse; }
+            set
+            {
+                _beskrivelse = value;
+                OnPropertyChanged(nameof(_beskrivelse));
+            }
+        }
+
+        public int Id
+        {
+            get { return _id; }
+            set
+            {
+                _id = value;
+                OnPropertyChanged(nameof(_id));
+            }
+        }
         public int ButikId { get; set; }
         public int Antal { get; set; }
 
@@ -30,11 +62,18 @@ namespace TilbudsApp.ViewModel
 
         public ItemHandler ItemHandler { get; set; }
 
+        public RelayCommand AddItemCommand { get; set; }
+
+
+        #endregion
+
         public OpretItem()
         {
             ItemSingleton = ItemSingleton.Instance;
             ItemHandler = new ItemHandler(this);
         }
+
+        
 
         public ICommand CreateItemCommand
         {

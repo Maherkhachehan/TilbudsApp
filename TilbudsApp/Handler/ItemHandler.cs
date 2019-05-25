@@ -18,7 +18,12 @@ namespace TilbudsApp.Handler
 
         public void AddItem()
         {
-            OpretItemVM.ItemSingleton.Add(OpretItemVM.Id, OpretItemVM.Iname, OpretItemVM.Beskrivelse);
+            // hvad FUCK laver du her
+            // det var det abed sagde der skulle stå
+            OpretItemVM.ItemSingleton.Add(
+                OpretItemVM.Id, 
+                OpretItemVM.Iname, 
+                OpretItemVM.Beskrivelse);
         }
 
     }
