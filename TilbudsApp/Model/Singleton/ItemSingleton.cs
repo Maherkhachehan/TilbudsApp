@@ -26,6 +26,7 @@ namespace TilbudsApp.Model.Singleton
         {
             ItemCollection = new ObservableCollection<Item>();
            // ItemCollection.Add(new Item(1,"Mad","produktmad"));
+           LoadItem();
         }
 
         public void Add(int id, string iname, string beskrivelse)
