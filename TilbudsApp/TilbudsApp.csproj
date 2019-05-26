@@ -119,17 +119,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\RelayArgCommand.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Handler\ByerHandler.cs" />
     <Compile Include="Handler\ItemHandler.cs" />
     <Compile Include="Model\Butik.cs" />
-    <Compile Include="Model\Singleton\ButikSingleton.cs" />
-    <Compile Include="Model\Singleton\ByerSingleton.cs" />
+    <Compile Include="Model\Singleton\ButiksByerSingleton.cs" />
     <Compile Include="Model\Firma.cs" />
     <Compile Include="Model\Item.cs" />
-    <Compile Include="Model\Singleton\FirmaSingleton.cs" />
     <Compile Include="Model\Singleton\ItemSingleton.cs" />
-    <Compile Include="Model\Singleton\TilbudItemSingleton.cs" />
     <Compile Include="Model\TilbudItem.cs" />
     <Compile Include="Persistency\ButikPersistencyService.cs" />
     <Compile Include="Persistency\FirmaPersistencyService.cs" />

@@ -15,5 +15,10 @@ namespace WebSerivceHttp
         [Required]
         [StringLength(50)]
         public string Bname { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(Id)}: {Id}, {nameof(Bname)}: {Bname}";
+        }
     }
 }

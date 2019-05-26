@@ -36,12 +36,12 @@ namespace TilbudsApp.Model.Singleton
             ItemPersistencyService.PostItemAsync(itemToBeAdded);
         }
 
-        public void Delete(Item ItemToBeDelete)
+        public void Delete(Item itemToBeDelete)
         {
-            ItemCollection.Remove((ItemToBeDelete));
-            ItemPersistencyService.DeleteItemAsync(ItemToBeDelete);
+            ItemCollection.Remove((itemToBeDelete));
+            ItemPersistencyService.DeleteItemAsync(itemToBeDelete);
         }
-        
+
         public async void LoadItem()
         {
             List<Item> ItemList = new List<Item>();

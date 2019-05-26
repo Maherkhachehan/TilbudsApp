@@ -10,13 +10,13 @@ using TilbudsApp.Persistency;
 
 namespace TilbudsApp.Model.Singleton
 {
-    public class ButikSingleton : INotifyPropertyChanged
+    public class ButiksByerSingleton : INotifyPropertyChanged
     {
-        private static ButikSingleton _instance = null;
+        private static ButiksByerSingleton _instance = null;
 
-        public static ButikSingleton Instance
+        public static ButiksByerSingleton Instance
         {
-            get { return _instance ?? (_instance = new ButikSingleton()); }
+            get { return _instance ?? (_instance = new ButiksByerSingleton()); }
         }
 
 
@@ -66,7 +66,7 @@ namespace TilbudsApp.Model.Singleton
 
         public ObservableCollection<Byer> ByerCollection { get; set; }
 
-        private ButikSingleton()
+        private ButiksByerSingleton()
         {
             ButikCollection = new ObservableCollection<Butik>();
             ByerCollection = new ObservableCollection<Byer>();

@@ -9,14 +9,16 @@ using System.Windows.Input;
 using TilbudsApp.Annotations;
 using TilbudsApp.Common;
 using TilbudsApp.Handler;
+using TilbudsApp.Model;
 using TilbudsApp.Model.Singleton;
 
 namespace TilbudsApp.ViewModel
 {
    class OpretItem : INotifyPropertyChanged
     {
-        public ICommand _createItemCommand;
-
+        private ICommand _createItemCommand;
+        private ICommand _deleteItemCommand;
+        private ICommand _selectItemCommand;
 
         private int _id;
         private string _beskrivelse;
@@ -64,6 +66,18 @@ namespace TilbudsApp.ViewModel
 
         public RelayCommand AddItemCommand { get; set; }
 
+        public Item SelectedItem { get; set; }
+
+        public ICommand SelectItemCommand
+        {
+            get
+            {
+                return _selectItemCommand ??
+                       (_selectItemCommand = new RelayArgCommand<Item>(i => ItemHandler.SetSelectedItem(i)));
+            }
+            set { _selectItemCommand = value; }
+        }
+
 
         #endregion
 
@@ -79,6 +93,12 @@ namespace TilbudsApp.ViewModel
         {
             get { return _createItemCommand ?? (_createItemCommand = new RelayCommand(ItemHandler.AddItem)); }
             set { _createItemCommand = value; }
+        }
+
+        public ICommand DeleteItemCommand
+        {
+            get { return _deleteItemCommand ?? (_deleteItemCommand = new RelayCommand(ItemHandler.DeleteItem)); }
+            set { _deleteItemCommand = value; }
         }
 
 

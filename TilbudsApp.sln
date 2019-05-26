@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TilbudsApp", "TilbudsApp\TilbudsApp.csproj", "{188B90AE-EE7C-4E45-AD14-45F7F8452B2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSerivceHttp", "WebSerivceHttp\WebSerivceHttp.csproj", "{EF949A51-9D75-4C09-93F1-A4C1F6FF47FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webservice", "WebSerivceHttp\Webservice.csproj", "{EF949A51-9D75-4C09-93F1-A4C1F6FF47FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{78491F98-A420-4DC9-9BF6-3227C8AF2260}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebbserviceConsol", "ConsoleTest\WebbserviceConsol.csproj", "{78491F98-A420-4DC9-9BF6-3227C8AF2260}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

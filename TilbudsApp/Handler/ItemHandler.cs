@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TilbudsApp.Model;
 using TilbudsApp.ViewModel;
 
 namespace TilbudsApp.Handler
@@ -18,13 +19,23 @@ namespace TilbudsApp.Handler
 
         public void AddItem()
         {
-            // hvad FUCK laver du her
-            // det var det abed sagde der skulle stå
+            
             OpretItemVM.ItemSingleton.Add(
                 OpretItemVM.Id, 
                 OpretItemVM.Iname, 
                 OpretItemVM.Beskrivelse);
         }
 
+        //Sletter den valgte item fra listen. 
+        public void DeleteItem()
+        {
+            OpretItemVM.ItemSingleton.Delete(OpretItemVM.SelectedItem);
+        }
+
+        //Gemmer hvilket item man har valgt på listen. 
+        public void SetSelectedItem(Item item)
+        {
+            OpretItemVM.SelectedItem = item;
+        }
     }
 }

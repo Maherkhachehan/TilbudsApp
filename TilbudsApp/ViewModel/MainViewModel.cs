@@ -16,11 +16,11 @@ namespace TilbudsApp.ViewModel
     public class MainViewModel : INotifyPropertyChanged
     {
         
-        public ButikSingleton ButikSingleton { get; set; }
+        public ButiksByerSingleton ButikSingleton { get; set; }
 
         public MainViewModel()
         {
-            ButikSingleton = ButikSingleton.Instance;
+            ButikSingleton = ButiksByerSingleton.Instance;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using TilbudsApp.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,6 +23,7 @@ namespace TilbudsApp.View
     /// </summary>
     public sealed partial class MinButik : Page
     {
+       // private OpretItem ViewModel { get; } = new OpretItem();
         public MinButik()
         {
             this.InitializeComponent();
