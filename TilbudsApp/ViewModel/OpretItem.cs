@@ -19,10 +19,11 @@ namespace TilbudsApp.ViewModel
         private ICommand _createItemCommand;
         private ICommand _deleteItemCommand;
         private ICommand _selectItemCommand;
-
+        
         private int _id;
         private string _beskrivelse;
         private string _iname;
+        public string overskrift { get; set; }
         #region props
 
         //Skriv propertiesne fra klassen -- Tilbuditem & Item
@@ -38,6 +39,10 @@ namespace TilbudsApp.ViewModel
             }
         }
 
+        public OpretItem()
+        {
+            overskrift = "Tilføj vare";
+        }
         public string Beskrivelse
         {
             get { return _beskrivelse; }
@@ -81,11 +86,7 @@ namespace TilbudsApp.ViewModel
 
         #endregion
 
-        public OpretItem()
-        {
-            ItemSingleton = ItemSingleton.Instance;
-            ItemHandler = new ItemHandler(this);
-        }
+        
 
         
 

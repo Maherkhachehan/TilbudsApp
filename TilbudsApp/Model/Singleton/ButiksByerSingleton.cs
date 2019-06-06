@@ -90,15 +90,11 @@ namespace TilbudsApp.Model.Singleton
 
         public async void LoadDb()
         {
-            
-            // TODO: Fjern highlight fra Byer ListView
             SelectedItem = null;
             // Clear alle items for duplicate pga Foreach Addere det samme fra database.
             ButikCollection.Clear();
 
-
-
-            List<Butik> tempList = new List<Butik>(); // this load butik?
+            List<Butik> tempList = new List<Butik>(); 
 
             tempList = await ButikPersistencyService.GetButikAsync();
             foreach (Butik butik in tempList)
@@ -112,10 +108,12 @@ namespace TilbudsApp.Model.Singleton
         public async void FilterDb(int? id)
         {
             // Load original database
+
             LoadDb();
 
             // Filterering af butikkerne. 
-            ButikCollection = new ObservableCollection<Butik>(ButikCollection.Where(x => x.Zipcode == id));
+            ButikCollection = 
+                new ObservableCollection<Butik>(ButikCollection.Where(x => x.Zipcode == id));
         }
 
         
