@@ -7,7 +7,7 @@ using TilbudsApp.Model;
 using TilbudsApp.ViewModel;
 
 namespace TilbudsApp.Handler
-{
+{//DDDDDDDDDDDD
     class ItemHandler
     {
         public OpretItem OpretItemVM { get; set; }
