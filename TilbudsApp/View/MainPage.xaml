@@ -14,7 +14,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <ListView Background="AntiqueWhite" 
+        <ListView Background="Bisque" 
                   HorizontalAlignment="Left" 
                   Height="600" VerticalAlignment="Top" 
                   Width="400" Margin="236,252,0,0" 
@@ -23,18 +23,25 @@
 
         <Button Content="Vis alle" Click="{x:Bind ViewModel.ButikSingleton.LoadDb}" Grid.Column="1"
                 HorizontalAlignment="Right"></Button>
-        <ListView Background="AntiqueWhite" 
+
+        <ListView Background="Bisque" 
                   HorizontalAlignment="Left" 
                   Height="600" Margin="947,252,0,0" 
                   VerticalAlignment="Top" Width="400"
                   ItemsSource="{x:Bind ViewModel.ButikSingleton.ButikCollection, Mode=OneWay}"
                   Grid.ColumnSpan="2" SelectionChanged="ListView_SelectionChanged_1" />
-        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="75" Margin="660,155,0,0"
+        <Grid Background="Bisque" HorizontalAlignment="Left" Height="100" Margin="0,0,-35,0" VerticalAlignment="Top" Width="1535" Grid.ColumnSpan="2">
+            <TextBlock HorizontalAlignment="Left" Height="75" Margin="630,10,0,0"
                    TextWrapping="Wrap" Text="Tilbuds App" VerticalAlignment="Top" Width="265"
                    SelectionChanged="TextBlock_SelectionChanged" FontSize="48"/>
-        <Button Content="Hjælp" Grid.Column="1" HorizontalAlignment="Left" Margin="474,15,0,0" VerticalAlignment="Top" Click="ButtonBase1_OnClick" Height="40" Width="76"/>
-        <Button Content="Om tilbudsapp" Grid.Column="1" HorizontalAlignment="Left" Margin="581,15,0,0" VerticalAlignment="Top" Click="ButtonBase2_OnClick" RenderTransformOrigin="1.25,0.938" Height="40" Width="149"/>
-        <Button Content="Login Side" HorizontalAlignment="Left" Margin="55,15,0,0" VerticalAlignment="Top" Click="ButtonBase_OnClick" Height="45" Width="90"/>
+            <Button Content="Login Side" HorizontalAlignment="Left" Margin="30,15,0,0" VerticalAlignment="Top" Click="ButtonBase_OnClick" Height="45" Width="90"/>
+            <Button Content="Hjælp" HorizontalAlignment="Left" Margin="1220,15,0,0" VerticalAlignment="Top" Click="ButtonBase1_OnClick" Height="40" Width="76"/>
+            <Button Content="Om tilbudsapp" HorizontalAlignment="Left" Margin="1330,15,0,0" VerticalAlignment="Top" Click="ButtonBase2_OnClick" RenderTransformOrigin="1.25,0.938" Height="40" Width="149"/>
+
+
+        </Grid>
+
+
 
     </Grid>
 

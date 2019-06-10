@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid HorizontalAlignment="Left" Height="1000" VerticalAlignment="Top" Width="1500">
-        <TextBlock HorizontalAlignment="Left" Margin="670,-5,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Height="75" Width="150" SelectionChanged="TextBlock_SelectionChanged_1" FontSize="48"/>
+        <TextBlock HorizontalAlignment="Left" Margin="600,10,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Height="75" Width="150" SelectionChanged="TextBlock_SelectionChanged_1" FontSize="48" RenderTransformOrigin="0.1,0.6"/>
         <TextBlock HorizontalAlignment="Left" Height="65" Margin="585,205,0,0" TextWrapping="Wrap" Text="Brugernavn" VerticalAlignment="Top" Width="260" SelectionChanged="TextBlock_SelectionChanged_1" FontSize="48"/>
         <TextBox HorizontalAlignment="Left" Height="45" Margin="580,300,0,0" TextWrapping="Wrap" PlaceholderText="Indtast Brugernavn" VerticalAlignment="Top" Width="250" TextChanged="TextBox_TextChanged" FontSize="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="585,405,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Height="65" Width="260" FontSize="48"/>
