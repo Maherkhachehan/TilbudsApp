@@ -29,6 +29,7 @@
             </interactivity:Interaction.Behaviors>
         </ListView>
         <AppBarButton x:Name="DeleteItemBtn" HorizontalAlignment="Left" Height="115" Icon="Remove" Label="Fjern Item" Margin="1265,619,0,0" VerticalAlignment="Top" Width="170" Command="{Binding DeleteItemCommand}"/>
+        <Button Content="MainPage" HorizontalAlignment="Left" Margin="45,25,0,0" VerticalAlignment="Top" Height="60" Width="160" Click="Button_Click" FontSize="24"/>
     </Grid>
 
 
