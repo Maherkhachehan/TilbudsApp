@@ -25,7 +25,7 @@ namespace TilbudsApp.Handler
                 OpretItemVM.Iname, 
                 OpretItemVM.Beskrivelse);
         }
-        //TEST 123
+        
         //Sletter den valgte item fra listen. 
         public void DeleteItem()
         {
